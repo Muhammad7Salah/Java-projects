@@ -1,0 +1,12 @@
+
+public class MainClass {
+	
+	public void main(String[] args) {
+		
+		Simulation simulation = new Simulation();
+		
+		
+		
+	}
+
+}

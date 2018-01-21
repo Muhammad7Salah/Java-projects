@@ -1,0 +1,34 @@
+
+public class U1 extends Rocket {
+
+	
+	
+	public U1() {
+		this.cost = 100000000;
+		this.weight = 10*907.185;
+		this.initWeight = this.weight;
+		this.weightLimit= 18*907.185; //kg
+	}
+	
+	
+	@Override
+	public boolean launch() {
+		double rand = Math.random()*0.001;
+		double Chance_of_launch_explosion = 0.05 * ((this.weight-this.initWeight)/this.weightLimit);
+		if(Chance_of_launch_explosion>rand) {
+			return true;
+		}
+		return false;
+	}
+	
+	@Override
+	public boolean land() {
+		double rand = (int) Math.random()*0.001;
+		double Chance_of_landing_crash = 0.01 * ((this.weight-this.initWeight)/this.weightLimit);
+		if(Chance_of_landing_crash>rand) {
+			return true;
+		}
+		return false;
+	}
+	
+}

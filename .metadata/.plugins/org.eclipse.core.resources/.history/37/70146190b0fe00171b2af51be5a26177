@@ -1,0 +1,16 @@
+
+public class U1 extends Rocket {
+
+	@Override
+	public boolean launch() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	
+	@Override
+	public boolean land() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	
+}

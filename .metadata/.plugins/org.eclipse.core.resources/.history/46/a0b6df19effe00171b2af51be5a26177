@@ -1,0 +1,30 @@
+
+public class U2 extends Rocket{
+	
+	public U2() {
+		this.cost= 120000000;
+		this.weight = 18 * 907.185;
+		this.initWeight=this.weight;
+		this.weightLimit= 29 * 907.185;
+	}
+
+	public boolean launch() {
+		// TODO Auto-generated method stub
+		double Chance_of_launch_explosion = 0.04 * ((this.weight-this.initWeight)/this.weightLimit);
+		if(Chance_of_launch_explosion>0.5)
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean land() {
+		// TODO Auto-generated method stub
+		double Chance_of_landing_crash = 0.08 * ((this.weight-this.initWeight)/this.weightLimit);
+		if(Chance_of_landing_crash>0.5)
+			return true;
+		else
+			return false;
+	}
+	
+	
+}

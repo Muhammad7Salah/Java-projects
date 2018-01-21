@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+
+public class Simulation {
+	
+	public ArrayList<Item> loadItems(){
+		//read file phase 2 and create object for each item then store it in the arraylist
+		return new ArrayList<>();
+	}
+
+	public ArrayList<Item> loadU1(ArrayList<Item> items){
+		/*this method takes the ArrayList of Items returned from loadItems and starts creating U1 rockets. 
+		 * It first tries to fill up 1 rocket with as many items as possible before creating a new rocket object and filling that one until all items are loaded. 
+		 * The method then returns the ArrayList of those U1 rockets that are fully loaded.
+		 */
+		
+		ArrayList<Item> loadedItems = loadItems();
+		
+		return new ArrayList<Item>();
+	}
+	
+	public ArrayList<Item> loadU2(ArrayList<Item> items){
+		/*this method takes the ArrayList of Items returned from loadItems and starts creating U1 rockets. 
+		 * It first tries to fill up 1 rocket with as many items as possible before creating a new rocket object and filling that one until all items are loaded. 
+		 * The method then returns the ArrayList of those U1 rockets that are fully loaded.
+		 */
+		
+		ArrayList<Item> loadedItems = loadItems();
+		
+		return new ArrayList<Item>();
+	}
+}

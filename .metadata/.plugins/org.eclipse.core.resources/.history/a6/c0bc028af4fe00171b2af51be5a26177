@@ -1,0 +1,97 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Simulation {
+	
+	public ArrayList<Item> loadItems(String filepath){
+		
+		ArrayList<Item> currentItems = new ArrayList<Item>();
+		
+		try {
+			File file = new File(filepath);
+			Scanner sc = new Scanner(file);
+			while(sc.hasNextLine())
+			{
+				String line = sc.nextLine();
+				
+				Item tempItem = new Item();
+				String[] lineSplitting = line.split("=");
+				tempItem.name=lineSplitting[0];
+				tempItem.weight=Double.parseDouble(lineSplitting[1]);
+				
+				currentItems.add(tempItem);
+				
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found");
+			}
+		return currentItems;
+	}
+
+	public ArrayList<Rocket> loadU1(ArrayList<Item> items){
+		/*this method takes the ArrayList of Items returned from loadItems and starts creating U1 rockets. 
+		 * It first tries to fill up 1 rocket with as many items as possible before creating a new rocket object and filling that one until all items are loaded. 
+		 * The method then returns the ArrayList of those U1 rockets that are fully loaded.
+		 */
+		
+		ArrayList<Rocket> rocketsU1 = new ArrayList<Rocket>();
+		Rocket myU1 = new U1();
+		int i=0;
+		while(items!=null) {
+			while(myU1.canCarry(items.get(i))) {
+				myU1.carry(items.get(i));
+				items.remove(i);
+			}
+			
+			rocketsU1.add(myU1);
+			
+		}
+		
+		return rocketsU1;
+	}
+	
+	public ArrayList<Rocket> loadU2(ArrayList<Item> items){
+		/*this method takes the ArrayList of Items returned from loadItems and starts creating U1 rockets. 
+		 * It first tries to fill up 1 rocket with as many items as possible before creating a new rocket object and filling that one until all items are loaded. 
+		 * The method then returns the ArrayList of those U1 rockets that are fully loaded.
+		 */
+		
+		ArrayList<Rocket> rocketsU1 = new ArrayList<Rocket>();
+		Rocket myU2 = new U1();
+		int i=0;
+		while(items!=null) {
+			while(myU2.canCarry(items.get(i))) {
+				myU2.carry(items.get(i));
+				items.remove(i);
+			}
+			
+			rocketsU1.add(myU2);
+			
+		}
+		
+		return rocketsU1;
+	}
+	
+	public int runSimulation(ArrayList<Rocket> rockets){
+		/*this method takes an ArrayList of Rockets and calls launch and land methods for each of the rockets in the ArrayList. 
+		 * Every time a rocket explodes or crashes (i.e if launch or land return false) it will have to send that rocket again. 
+		 * All while keeping track of the total budget required to send each rocket safely to Mars. 
+		 * runSimulation then returns the total budget required to send all rockets (including the crashed ones).
+		 */
+		int budget = 0;
+		
+		int i=0;
+		while(rockets!=null) {
+			budget+=rockets.get(i).cost;
+			if(rockets.get(i).launch()&&rockets.get(i).land()) {
+				rockets.remove(i);
+			}
+			
+		}
+		
+		return budget;
+	}
+	
+}

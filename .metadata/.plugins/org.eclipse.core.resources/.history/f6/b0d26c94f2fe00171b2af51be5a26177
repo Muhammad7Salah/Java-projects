@@ -1,0 +1,13 @@
+import java.util.ArrayList;
+
+public class MainClass {
+	
+	public void main(String[] args) {
+		
+		Simulation simulation = new Simulation();
+		
+		ArrayList<Item> phase1Items=simulation.loadItems("phase1.txt");
+		
+	}
+
+}

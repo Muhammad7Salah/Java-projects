@@ -1,0 +1,31 @@
+
+public class ContactsManager {
+
+	Contact[] contactList;
+	int count;
+	
+	public ContactsManager() {
+		this.contactList = new Contact[500];
+		this.count = 0;
+	}
+	
+	public Boolean addContact(Contact contact) {
+		try {
+			contactList[count]=contact;
+			count++;	
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public Contact searchContact(String name) {
+		for (Contact contact : contactList) {
+			if(name.equals(contact.Name)) {
+				return contact;
+			}
+		}
+		return null;
+	}
+	
+}

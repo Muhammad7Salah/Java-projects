@@ -1,0 +1,31 @@
+
+public class U1 extends Rocket {
+
+	
+	
+	public U1() {
+		this.cost = 100;
+		this.weight = weight;
+		this.initWeight = 
+		this.weightLimit= 18*907.185; //kg
+	}
+	
+	
+	@Override
+	public boolean launch() {
+		// TODO Auto-generated method stub
+		
+		double Chance_of_launch_explosion = 0.05 * (/ cargo limit)
+		/*
+		Chance of landing crash = 1% * (cargo carried / cargo limit)*/
+		return true;
+	}
+	
+	@Override
+	public boolean land() {
+		// TODO Auto-generated method stub
+		
+		return true;
+	}
+	
+}

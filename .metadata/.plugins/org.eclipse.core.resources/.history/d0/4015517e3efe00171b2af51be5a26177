@@ -1,0 +1,15 @@
+
+public class Queen extends Piece {
+
+	Boolean isValid(Position newPosition){
+		
+		if(newPosition.column == super.column || newPosition.row == this.row){
+	         return true;
+	      }
+	      else {
+	    	  
+	      }
+		
+		
+	}
+}

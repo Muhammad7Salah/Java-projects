@@ -1,0 +1,34 @@
+
+public class Rocket implements Spaceship {
+
+	int cost;
+	int weight;
+	
+	@Override
+	public boolean launch() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean land() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean canCarry(Item item) {
+		// TODO Auto-generated method stub
+		
+		if()
+		
+		return false;
+	}
+
+	@Override
+	public int carry(Item item) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

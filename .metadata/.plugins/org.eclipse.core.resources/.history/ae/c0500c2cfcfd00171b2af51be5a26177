@@ -1,0 +1,7 @@
+
+public class SavingsAccount extends BankAccount{
+
+	String account;
+	double balance;
+	
+}

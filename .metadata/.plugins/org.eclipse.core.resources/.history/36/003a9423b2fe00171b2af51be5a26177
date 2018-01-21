@@ -1,0 +1,24 @@
+
+public class U2 {
+
+	@Override
+	public boolean launch() {
+		// TODO Auto-generated method stub
+
+		return true;
+	}
+	
+	@Override
+	public boolean land() {
+		// TODO Auto-generated method stub
+		
+		/*Rocket cost = $120 Million
+		Rocket weight = 18 Tonnes
+		Max weight (with cargo) = 29 Tonnes
+		Chance of launch explosion = 4% * (cargo carried / cargo limit)
+		Chance of landing crash = 8% * (cargo carried / cargo limit)*/
+		return true;
+	}
+	
+	
+}

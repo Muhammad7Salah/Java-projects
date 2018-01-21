@@ -1,0 +1,37 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class GuessGame {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc;
+		
+		int guesses = 10;
+		
+		Random rand = new Random();
+		int r = rand.nextInt(100)+1;
+		
+		System.out.println("I have randomly chosen a number between [1, 100]\nTry to guess it.\nYou have "+guesses+"guess(es) left: ");
+		
+		while(true)
+		{
+			sc = new Scanner(System.in);
+			int mine = sc.nextInt();
+			if(mine == r)
+				System.out.println("CORRECT ... YOU WIN!");
+			else if(r < mine)
+			{
+				System.out.println("It's smaller than "+mine);
+			}
+			else if(r > mine)
+			{
+				System.out.println("It's bigger than "+mine);
+			}
+			guesses--;
+			System.out.println("You have "+guesses+"guess(es) left: ");
+		}
+
+	}
+
+}
